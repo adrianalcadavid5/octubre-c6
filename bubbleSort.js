@@ -70,7 +70,7 @@ const bubbleSortAbc = (arr)=>{
 }
 
 bubbleSortAbc(letras)
-console.log(`ordenado en forma alfabetica seria ${letras}`);
+//console.log(`ordenado en forma alfabetica seria ${letras}`);
 
 /*3. A partir del siguiente array de Objetos Literales se solicita realizar lo siguiente:*/
 
@@ -165,6 +165,77 @@ const bubbleSortEdad = (arr)=>{
 }
 bubbleSortEdad(arrayCuentas)
 //console.log(arrayCuentas);
+
+// otros ejercicios
+let listaCartas = [6,3,5,8,7,9,2,4,1,0];
+
+const ordenarCartasFun = array => {
+    let mayor;
+    for(let i = 0; i < array.length; i++){
+        for(let j = 0; j < array.length - 1; j++){ 
+            if(array[j] > array[j + 1]){
+                mayor = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = mayor;
+            }
+        }
+    }
+}
+
+
+let ordenarCartas = ordenarCartasFun(listaCartas);
+//console.log(listaCartas);
+
+let persona = {
+    nombre : "Dua",
+    apellido : "Lipa",
+    ocupacion : "cantante",
+    estatura : 173,
+}
+//console.log(persona.nombre) // Dua
+//console.log(persona.ocupacion) // cantante
+
+
+//¿Cómo podrías ordenar la siguiente colección, de menor a mayor, considerando solo la estatura?
+
+let personas = [
+	{
+		nombre: "Dua",
+		apellido: "Lipa",
+		ocupacion: "cantante",
+		estatura: 173
+	},
+	{
+		nombre: "Ariana",
+		apellido: "Grande",
+		ocupacion: "cantante",
+		estatura: 160
+	},
+	{
+		nombre: "Taylor",
+		apellido: "Swift",
+		ocupacion: "cantante",
+		estatura: 180
+	}
+];
+
+const bubbleSortEstatura = (array, propiedad) => {
+    let aux;
+    for (let i = 0; i < array.length; i++){
+
+        for(let j = 0; j < array.length - 1; j++){
+            if (array[j][propiedad] > array[j + 1][propiedad]){
+                aux = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = aux;
+            }
+        }
+    }
+}
+bubbleSortEstatura(personas, "estatura")
+console.log(personas);
+
+
 
 
 
